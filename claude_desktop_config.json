@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "youtube-transcriber-enhanced": {
+      "command": "python3",
+      "args": [
+        "/Users/steven/youtube-transcriber/youtube-transcriber-mcp-clean/youtube_mcp_server_enhanced.py"
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}
