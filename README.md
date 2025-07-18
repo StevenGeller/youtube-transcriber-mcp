@@ -124,7 +124,7 @@ Once configured, you can transcribe YouTube videos by asking:
 
 ### Speaker Diarization
 
-The transcriber now includes built-in local speaker diarization that works without any external APIs or tokens. It automatically:
+The transcriber includes built-in local speaker diarization that works completely offline without any external APIs or tokens. It automatically:
 
 - Detects the number of speakers in the video
 - Segments the audio by speaker
@@ -135,11 +135,7 @@ The local diarization uses:
 - Clustering algorithms to group similar voices
 - Energy-based voice activity detection
 
-For enhanced diarization using HuggingFace models (optional):
-
-```bash
-export HF_TOKEN="your-huggingface-token"
-```
+**Note:** The HuggingFace token is no longer required. The transcriber uses local diarization by default, which provides good results for most use cases without any authentication.
 
 ## Project Structure
 
@@ -164,9 +160,10 @@ youtube-transcriber-mcp/
 - Try using a smaller model size
 - Ensure you have sufficient RAM (4GB+ recommended)
 
-### No speaker identification
-- This is normal without a HuggingFace token
-- The transcription will still work with a single speaker label
+### Speaker identification issues
+- The local diarization should work automatically
+- If speaker detection fails, all speech will be labeled as SPEAKER_00
+- Check the logs for any error messages
 
 ## Contributing
 
